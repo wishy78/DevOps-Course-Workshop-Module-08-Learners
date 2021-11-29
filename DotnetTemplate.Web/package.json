@@ -14,7 +14,8 @@
     "dev:webpack": "webpack --config webpack.config.dev.js",
     "clean": "rimraf wwwroot/css/ && rimraf wwwroot/js/",
     "sass": "node-sass Styles/ --importer node_modules/node-sass-package-importer/dist/cli.js --output wwwroot/css/",
-    "test": "jasmine-ts --config=Scripts/spec/support/jasmine.json"
+    "test": "jasmine-ts --config=Scripts/spec/support/jasmine.json",
+    "test-with-coverage": "nyc jasmine-ts --config=Scripts/spec/support/jasmine.json"
   },
   "dependencies": {
     "core-js": "^3.10.0",
@@ -28,13 +29,13 @@
     "@typescript-eslint/eslint-plugin": "^4.20.0",
     "@typescript-eslint/parser": "^4.20.0",
     "babel-loader": "^8.2.2",
-    "copy-webpack-plugin": "^8.1.0",
+    "copy-webpack-plugin": "^10.0.0",
     "eslint": "^7.23.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-import-resolver-webpack": "^0.13.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jasmine": "^4.1.2",
-    "fork-ts-checker-webpack-plugin": "^6.2.0",
+    "fork-ts-checker-webpack-plugin": "^6.4.2",
     "glob": "7.1.6",
     "jasmine": "^3.7.0",
     "jasmine-parameterized": "^0.4.0",
@@ -43,17 +44,36 @@
     "node-sass": "^6.0.0",
     "node-sass-package-importer": "5.3.2",
     "npm-run-all": "4.1.5",
+    "nyc": "^15.1.0",
     "rimraf": "3.0.2",
     "source-map-loader": "2.0.1",
     "ts-loader": "9.2.3",
     "ts-node": "^10.0.0",
     "typescript": "4.2.3",
-    "webpack": "5.38.0",
-    "webpack-cli": "4.6.0"
+    "webpack": "5.64.0",
+    "webpack-cli": "4.9.1"
   },
   "-vs-binding": {
     "ProjectOpened": [
       "dev"
     ]
+  },
+  "nyc": {
+    "extension": [
+      ".ts",
+      ".tsx"
+    ],
+    "include": [
+      "Scripts"
+    ],
+    "exclude": [
+      "**/*.d.ts",
+      "**/spec"
+    ],
+    "reporter": [
+      "html",
+      "cobertura"
+    ],
+    "all": true
   }
 }
