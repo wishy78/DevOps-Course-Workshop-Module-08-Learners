@@ -2,7 +2,9 @@
 
 This repository is for learners on Corndel's DevOps apprenticeship.
 
-If you attended workshop 7, you should continue working with the same repository. If you do not have your own solution to workshop 7 for whatever reason, then use a fork of this repository.
+If you attended workshop 7, you can continue working with the same repository. If you do not have your own solution to workshop 7 for whatever reason, then fork this repository. Or if you are using GitLab, manually create a GitLab repository based on this one.
+
+There are valid 
 
 During this workshop follow the instructions in [during_workshop_8.md](./during_workshop_8.md).
 
