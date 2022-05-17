@@ -105,9 +105,11 @@ See the example ["Deploy with Docker"](https://github.com/marketplace/actions/de
 
 Set your API key as an environment variable called "HEROKU_API_KEY".
 
-Add a new job to your `.gitlab-ci.yml` file (or again, you could make this a new job). You need to:
+Add a new job to your `.gitlab-ci.yml` file. You need to:
 
 * Install the Heroku CLI
+  * Install its dependencies with `apk add --update-cache curl bash npm`
+  * Install the tool itself with `curl https://cli-assets.heroku.com/install.sh | sh`
 * Add all the commands that you ran manually before. Namely:
   * Build your image
   * Log in to the Heroku container registry
