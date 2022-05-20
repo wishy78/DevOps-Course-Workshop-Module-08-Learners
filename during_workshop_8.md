@@ -7,7 +7,9 @@ Add a Dockerfile to the app so that you can build and run it using Docker.
 
 There are different approaches to writing the Dockerfile but we'd recommend starting from an [official dotnet image](https://hub.docker.com/_/microsoft-dotnet) and then [scripting the install of node/NPM](https://github.com/nodesource/distributions/blob/master/README.md).
 
-Then use the setup commands in [during_workshop_7.md](./during_workshop_7.md) to install dependencies and build the app, and add an `ENTRYPOINT` that will start the app.
+Then use the setup commands in the [README](./README.md) to install dependencies and build the app.
+
+Finally, add an `ENTRYPOINT` that will start the app.
 
 Once you've done that try building and running the Dockerfile locally to check it works.
 
@@ -107,9 +109,15 @@ Set your API key as an environment variable called "HEROKU_API_KEY".
 
 Add a new job to your `.gitlab-ci.yml` file. You need to:
 
-* Install the Heroku CLI
-  * Install its dependencies with `apk add --update-cache curl bash npm`
-  * Install the tool itself with `curl https://cli-assets.heroku.com/install.sh | sh`
+* Set up pre-requisites:
+  * Run the job in a "Docker in Docker" image by setting `image: docker`
+  * Add "Docker" service to your job by setting `services: [ docker:dind ]`. For both of these, you could pick a specific tag from [the repository](https://hub.docker.com/_/docker) to control the version of Docker.
+  * Install Heroku CLI and its dependencies with:
+  ```bash
+  apk add --update-cache curl bash npm`
+  curl https://cli-assets.heroku.com/install.sh | sh
+  ```
+
 * Add all the commands that you ran manually before. Namely:
   * Build your image
   * Log in to the Heroku container registry

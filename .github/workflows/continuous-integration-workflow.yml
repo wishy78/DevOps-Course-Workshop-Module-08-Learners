@@ -8,21 +8,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Setup .NET 5.0 SDK
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: 5.0.x
-
     - name: Dotnet build
       run: dotnet build --configuration Release
 
     - name: Dotnet test
       run: dotnet test
-
-    - name: Setup node
-      uses: actions/setup-node@v1
-      with:
-        node-version: '16'
 
     - name: Typescript install
       run: npm ci
