@@ -1,0 +1,19 @@
+stages:
+  - test
+
+dotnet-job:
+  image: mcr.microsoft.com/dotnet/sdk:6.0        
+  stage: test
+  script:
+    - dotnet build
+    - dotnet test
+
+npm-job: 
+  image: node:17-bullseye-slim     
+  stage: test
+  script:
+    - cd DotnetTemplate.Web
+    - npm ci
+    - npm run build
+    - npm run lint
+    - npm run test

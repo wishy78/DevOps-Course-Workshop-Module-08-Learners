@@ -1,5 +1,7 @@
-function example() {
+export function functionOne() {
   console.log('Hello world!');
 }
 
-example();
+export function functionTwo() {
+  console.log('Hello world again!');
+}
