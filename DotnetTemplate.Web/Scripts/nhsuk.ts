@@ -9,6 +9,7 @@ import Checkboxes from 'nhsuk-frontend/packages/components/checkboxes/checkboxes
 import 'nhsuk-frontend/packages/polyfills';
 import 'core-js/stable';
 
+/* istanbul ignore next */
 // Initialize components
 document.addEventListener('DOMContentLoaded',
   () => {

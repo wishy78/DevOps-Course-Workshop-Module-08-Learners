@@ -1,12 +1,14 @@
+import { functionOne } from '../home/example';
+
 describe('Example', () => {
-  it('runs test', () => {
+  it('can run functionOne', () => {
     // Given
     const one = 1;
 
     // When
-    const sum = one + one;
+    functionOne();
 
     // Then
-    expect(sum).toEqual(2);
+    expect(1).toEqual(one);
   });
 });
