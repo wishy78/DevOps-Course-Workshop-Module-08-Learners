@@ -3,7 +3,10 @@
 ## Part 1 (Publish to Docker Hub)
 
 ### Add a Dockerfile
-Add a Dockerfile to the app so that you can build and run it using Docker.
+
+Write a Dockerfile so that you can run the DotnetTemplate web app in a Docker container.
+
+> You might already have a Dockerfile in your repository from workshop 7, but that should be deleted or moved. It was for running a Jenkins build server locally, not for running this application.
 
 There are different approaches to writing the Dockerfile but we'd recommend starting from an [official dotnet image](https://hub.docker.com/_/microsoft-dotnet) and then [scripting the install of node/NPM](https://github.com/nodesource/distributions/blob/master/README.md).
 
