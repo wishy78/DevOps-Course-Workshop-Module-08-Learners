@@ -33,6 +33,8 @@ Once you've done that try building and running the Dockerfile locally to check i
 
 You should already have a pipeline which builds and tests the app. You will now extend it to automatically build the Docker image and publish it to Docker Hub.
 
+Use one of **GitHub Actions** or **GitLab CI/CD** for this workshop - GitHub Actions is the default if you're not sure which to choose.
+
 #### **With GitHub Actions**
 
 You could add new steps to your existing job, but let's create a new job to handle this. Make sure your new job only runs after the testing job completes successfully, by using the ["needs"](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idneeds) option.
