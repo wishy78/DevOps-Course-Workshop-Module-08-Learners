@@ -80,7 +80,7 @@ In one of the workshop 7 goals you were asked to set up a Jenkins job for the ap
 
 ### Deploy to Heroku manually
 
-> ⚠️ M1 Mac users: Heroku uses x86-64 processors, so to build your image for Heroku use `--platform linux/amd64` when running `docker build`.
+> ⚠️ M1 Mac users: Heroku uses x86-64 processors, so to build your image for Heroku use `--platform linux/amd64` when running `docker build`, and avoid using `heroku container:push`.
 
 1. Create a free Heroku account: https://signup.heroku.com/.
 2. Create a new Heroku app: https://dashboard.heroku.com/new-app. Do not click the button to integrate with a GitHub repository.
