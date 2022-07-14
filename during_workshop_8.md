@@ -79,6 +79,9 @@ In one of the workshop 7 goals you were asked to set up a Jenkins job for the ap
 ## Part 2 (Deploy to Heroku)
 
 ### Deploy to Heroku manually
+
+> ⚠️ M1 Mac users: Heroku uses x86-64 processors, so to build your image for Heroku use `--platform linux/amd64` when running `docker build`.
+
 1. Create a free Heroku account: https://signup.heroku.com/.
 2. Create a new Heroku app: https://dashboard.heroku.com/new-app. Do not click the button to integrate with a GitHub repository.
 3. Build your docker image locally and deploy it to Heroku. See https://devcenter.heroku.com/articles/container-registry-and-runtime for instructions. In particular you want to [push an existing image](https://devcenter.heroku.com/articles/container-registry-and-runtime#building-and-pushing-image-s) then [release the image](https://devcenter.heroku.com/articles/container-registry-and-runtime#cli). The first steps will push the Docker image to Heroku's Docker Hub registry. Then the last step will deploy that image to your Heroku app.
