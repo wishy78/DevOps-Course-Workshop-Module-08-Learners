@@ -120,7 +120,7 @@ Add a new job to your `.gitlab-ci.yml` file. You need to:
   * Add "Docker" service to your job by setting `services: [ docker:dind ]`. For both of these, you could pick a specific tag from [the repository](https://hub.docker.com/_/docker) to control the version of Docker.
   * Install Heroku CLI and its dependencies with:
   ```bash
-  apk add --update-cache curl bash npm`
+  apk add --update-cache curl bash npm
   curl https://cli-assets.heroku.com/install.sh | sh
   ```
 
