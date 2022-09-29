@@ -7,10 +7,9 @@ RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
 # Install Nodejs
 RUN apt-get install -y nodejs
 
-
 WORKDIR /app
 COPY DotnetTemplate.Web ./
-RUN dotnet publish -c Release -o /app --use-current-runtime --self-contained false --no-restore
+RUN dotnet publish -c Release -o /app --use-current-runtime --self-contained false
 
 FROM mcr.microsoft.com/dotnet/aspnet:6.0
 WORKDIR /dist
