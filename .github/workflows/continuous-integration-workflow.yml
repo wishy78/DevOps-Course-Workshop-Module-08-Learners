@@ -28,12 +28,13 @@ jobs:
 
     - name: Build Image
       run: docker build --tag m8 .
+      needs: [Dotnet test, Typescript test]
 
     - name: Change Tag
       run: docker tag m8 wishy78/dotnettemplate:m8
 
     - name: Login to Docker hub
-      run: docker login --username wishy78 --password ${{ secrets.DOCKER_PASS }}
+      run: docker login --username wishy78 --password "${{ secrets.DOCKER_PASSWORD }}"
 
     - name: Publish to Docker hub
       run: docker push wishy78/dotnettemplate:m8
