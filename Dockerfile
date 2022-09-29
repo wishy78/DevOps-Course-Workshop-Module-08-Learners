@@ -9,11 +9,12 @@ RUN apt-get install -y nodejs
 
 WORKDIR /app
 COPY DotnetTemplate.Web ./
-RUN dotnet publish -c Release -o /app --use-current-runtime --self-contained false
+RUN dotnet publish -c Release -o /dist --use-current-runtime --self-contained false
 
 FROM mcr.microsoft.com/dotnet/aspnet:6.0
 #copy the dlls that were built
 COPY --from=base /dist /dist
+WORKDIR /dist
 ENTRYPOINT ["dotnet", "DotnetTemplate.Web.dll"]
 
 # docker build --tag m8 .
