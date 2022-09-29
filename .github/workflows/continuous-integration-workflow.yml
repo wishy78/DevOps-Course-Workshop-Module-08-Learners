@@ -58,4 +58,4 @@ jobs:
         heroku_app_name: "jonm8" #Must be unique in Heroku
         heroku_email: "wishy78@hotmail.com"
         usedocker: true
-    - run: docker HEALTHCHECK CMD curl --fail https://jonm8.herokuapp.com/health
+    - run: curl --fail https://jonm8.herokuapp.com/health
