@@ -46,7 +46,7 @@ jobs:
     - name: Publish to Docker hub
       run: docker push wishy78/dotnettemplate:m8
 
-DeployHeroku:
+  deployheroku:
     runs-on: ubuntu-latest
     name: Deploy to Heroku
     needs: [cd]
