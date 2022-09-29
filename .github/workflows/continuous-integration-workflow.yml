@@ -32,5 +32,8 @@ jobs:
     - name: Change Tag
       run: docker tag m8 wishy78/dotnettemplate:m8
 
+    - name: Login to Docker hub
+      run: docker login --username wishy78 --password ${{ secrets.DOCKER_PASS }}
+
     - name: Publish to Docker hub
       run: docker push wishy78/dotnettemplate:m8
