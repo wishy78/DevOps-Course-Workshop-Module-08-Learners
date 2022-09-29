@@ -18,7 +18,7 @@ WORKDIR /source
 COPY DotnetTemplate.Web/*.csproj .
 
 # copy everything else and build app
-COPY aspnetapp/. .
+COPY DotnetTemplate.Web/. .
 RUN dotnet publish -c Release -o /app --use-current-runtime --self-contained false --no-restore
 
 # final stage/image
