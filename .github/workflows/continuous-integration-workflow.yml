@@ -19,9 +19,18 @@ jobs:
       working-directory: ./DotnetTemplate.Web
 
     - name: Typescript build
-      run: npm run build 
+      run: npm run build
       working-directory: ./DotnetTemplate.Web
 
     - name: Typescript test
       run: npm run test
       working-directory: ./DotnetTemplate.Web
+
+    - name: Build Image
+      run: docker build --tag m8 .
+
+    - name: Change Tag
+      run: docker tag m8 wishy78/dotnettemplate:m8
+
+    - name: Publish to Docker hub
+      run: docker push wishy78/dotnettemplate:m8
