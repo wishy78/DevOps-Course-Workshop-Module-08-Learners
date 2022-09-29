@@ -12,7 +12,6 @@ COPY DotnetTemplate.Web ./
 RUN dotnet publish -c Release -o /app --use-current-runtime --self-contained false
 
 FROM mcr.microsoft.com/dotnet/aspnet:6.0
-WORKDIR /dist
 #copy the dlls that were built
 COPY --from=base /dist /dist
 ENTRYPOINT ["dotnet", "DotnetTemplate.Web.dll"]
